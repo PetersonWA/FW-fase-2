@@ -1,0 +1,46 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.header {
+  background-color: #78b83d;
+}
+
+.search-bar input {
+  border-radius: 20px;
+  border: none;
+}
+
+.product-item {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra nas divs */
+  margin-bottom: 20px;  /* Espaçamento entre os cards */
+}
+
+.product-img {
+  width: auto;
+  height: auto;
+}
+
+.product-info h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-action button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.product-action button:hover {
+  background-color: #ffdd33;
+}
+
+.fixed-bottom img {
+  width: 24px;
+}

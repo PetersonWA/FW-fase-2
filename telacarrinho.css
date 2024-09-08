@@ -1,0 +1,94 @@
+.container {
+    background-color: #e5f1dc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h5 {
+    color: #666;
+    font-weight: bold;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.product-title {
+    font-weight: bold;
+}
+
+.product-name {
+    color: #333;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #000;
+}
+
+.product-quantity .quantity-input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin: 0 8px;
+}
+
+.btn-quantity {
+    background-color: #5a45ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-quantity:hover {
+    background-color: #4433cc;
+}
+
+.product-freight {
+    color: #333;
+}
+
+.freight-free {
+    color: green;
+}
+
+.payment-method h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.payment-method .form-check-label {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-method .form-check-label i {
+    font-size: 20px;
+}
+
+.summary p, .summary h6 {
+    font-weight: bold;
+    color: #333;
+}
+
+.total-price {
+    color: #000;
+}
+
+.btn-primary {
+    background-color: #5a45ff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #4433cc;
+}

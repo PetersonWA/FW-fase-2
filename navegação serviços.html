@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento - PetShop SonhoMeu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/navegação serviços.css">
+
+</head>
+<body>
+  <!-- Cabeçalho com o logo e campo de busca -->
+  <div class="header bg-success text-white text-center py-3">
+    <h1 class="fs-3">PetShop SonhoMeu</h1>
+    <div class="search-bar mx-4">
+      <input type="text" class="form-control mb-2" placeholder="Buscar...">
+    </div>
+  </div>
+
+  <!-- Menu de navegação -->
+  <div class="container mt-2">
+    <div class="d-flex justify-content-around">
+      <a href="navegação perfil.html"><button class="btn btn-light btn-lg">PERFIL</button></a>
+      <a href="navegação produtos.html"><button class="btn btn-light btn-lg">PRODUTOS</button></a>
+      <button class="btn btn-light btn-lg active">SERVIÇOS</button>
+    </div>
+    <p class="text-end mt-2"><a href="telalogin.html" class="text-warning">Fazer login.</a></p>
+  </div>
+
+  <!-- Seção de Agendamento -->
+  <div class="container mt-3">
+    <h3 class="text-center">Banho e Tosa</h3>
+
+    <!-- Seleção do Pet -->
+    <div class="my-4">
+      <h5>Selecione seu pet:</h5>
+      <button class="btn btn-outline-success w-100" data-bs-toggle="collapse" data-bs-target="#addPet" id="selectPet">Adicione o seu pet!</button>
+    </div>
+
+    <!-- Formulário de adição de pet -->
+    <div class="collapse" id="addPet">
+      <form id="petForm">
+        <div class="mb-3">
+          <label for="petName" class="form-label">Nome do Pet</label>
+          <input type="text" class="form-control" id="petName" placeholder="Digite o nome do pet" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Enviar</button>
+      </form>
+    </div>
+
+    <!-- Campos adicionais - só aparecem após a seleção do pet -->
+    <div id="additionalFields">
+      <!-- Serviços -->
+      <div class="mt-4">
+        <h5>Selecione os serviços desejados:</h5>
+        <div class="form-check">
+          <input class="form-check-input service-checkbox" type="checkbox" id="banho">
+          <label class="form-check-label" for="banho">Banho</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input service-checkbox" type="checkbox" id="corte">
+          <label class="form-check-label" for="corte">Corte de unha</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input service-checkbox" type="checkbox" id="ouvido">
+          <label class="form-check-label" for="ouvido">Limpeza de Ouvido</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input service-checkbox" type="checkbox" id="escovacao">
+          <label class="form-check-label" for="escovacao">Escovacao de Pelo</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input service-checkbox" type="checkbox" id="tosaCompleta">
+          <label class="form-check-label" for="tosaCompleta">Tosa Completa</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input service-checkbox" type="checkbox" id="tosaHigienica">
+          <label class="form-check-label" for="tosaHigienica">Tosa Higienica</label>
+        </div>
+      </div>
+
+      <!-- Seleção de Data e Horário -->
+      <div class="mt-4">
+        <h5>Selecione o dia e hora de sua preferência:</h5>
+        <!-- Campo de Seleção de Data -->
+        <div class="mb-3">
+          <label for="selectDay" class="form-label">Selecione o dia do mês:</label>
+          <select class="form-select" id="selectDay" required>
+            <option value="">Selecione um dia</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            </select>
+        </div>
+
+        <!-- Opções de horários -->
+        <div class="time-options">
+          <button type="button" class="btn btn-outline-success time-btn" data-time="08:00">08:00</button>
+          <button type="button" class="btn btn-outline-success time-btn" data-time="09:00">09:00</button>
+          <button type="button" class="btn btn-outline-success time-btn" data-time="10:00">10:00</button>
+          <button type="button" class="btn btn-outline-success time-btn" data-time="11:00">11:00</button>
+          <button type="button" class="btn btn-outline-success time-btn" data-time="13:00">13:00</button>
+          <button type="button" class="btn btn-outline-success time-btn" data-time="14:00">14:00</button>
+          <button type="button" class="btn btn-outline-success time-btn" data-time="15:00">15:00</button>
+          <button type="button" class="btn btn-outline-success time-btn" data-time="16:00">16:00</button>
+          <!-- Outros horários... -->
+        </div>
+      </div>
+
+      <!-- Transporte -->
+      <div class="mt-4">
+        <h5>Vai precisar que busque seu amigo?</h5>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="transporte" id="sim" value="sim">
+          <label class="form-check-label" for="sim">Sim</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="transporte" id="nao" value="nao">
+          <label class="form-check-label" for="nao">Não</label>
+        </div>
+      </div>
+
+      <!-- Total -->
+      <div class="mt-4 text-center">
+        <h4>Total: <span id="totalValue">XX,xx R$</span></h4>
+      </div>
+      <br></br>
+      <br></br>
+
+      <!-- Botão de Confirmação -->
+      <div class="text-center mt-3">
+        <a href="telacarrinho.html"><button class="btn btn-success w-100" id="confirm-btn" disabled>Confirmar! Ir ao Carrinho.</button>
+      </div>
+    </div>
+  </div>
+
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
+
+  <!-- Barra de navegação inferior -->
+  <div class="fixed-bottom bg-success py-3">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col text-center">
+          <a href="navegação perfil.html">
+            <img src="imagens projeto/icone home.png" alt="Home" class="nav-icon">
+          </a>
+        </div>
+        <div class="col text-center">
+          <a href="https://wa.me/555192203110" target="_blank">
+            <img src="imagens projeto/icone whats.png" alt="WhatsApp" class="nav-icon">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- scripts para navegação e testagem do formulário ate a conclusão -->
+  <script>
+    document.getElementById('petForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const petName = document.getElementById('petName').value;
+      if (petName) {
+        document.getElementById('additionalFields').style.display = 'block';
+      }
+    });
+
+    const checkCompletion = () => {
+      const selectedServices = document.querySelectorAll('.service-checkbox:checked').length > 0;
+      const selectedDay = document.getElementById('selectDay').value !== "";
+      const selectedTime = document.querySelector('.time-btn.active');
+      const selectedTransport = document.querySelector('input[name="transporte"]:checked');
+      const allValid = selectedServices && selectedDay && selectedTime && selectedTransport;
+      document.getElementById('confirm-btn').disabled = !allValid;
+    };
+
+    document.querySelectorAll('.service-checkbox, #selectDay, input[name="transporte"]').forEach(element => {
+      element.addEventListener('change', checkCompletion);
+    });
+
+    document.querySelectorAll('.time-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        checkCompletion();
+      });
+    });
+  </script>
+</body>
+</html>

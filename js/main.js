@@ -1,0 +1,1 @@
+mainWindow.loadFile("index.html");

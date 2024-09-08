@@ -1,0 +1,48 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.header {
+  background-color: #78b83d;
+}
+
+.search-bar input {
+  border-radius: 20px;
+  border: none;
+}
+
+button.btn-lg.active {
+  background-color: #78b83d;
+  color: white;
+  border-radius: 20px;
+}
+
+button.btn-lg {
+  background-color: #f8f9fa;
+  color: black;
+  border-radius: 20px;
+}
+
+.profile-header img {
+  width: 100px;
+}
+
+.accordion-button {
+  background-color: #f8f9fa;
+}
+
+.accordion-button:hover {
+  background-color: #e0e0e0;
+}
+
+textarea {
+  resize: none;
+}
+
+.fixed-bottom {
+  background-color: #78b83d;
+}
+
+.fixed-bottom img {
+  width: 50px;
+}

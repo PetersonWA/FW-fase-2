@@ -1,0 +1,48 @@
+body {
+  background-color: #f8f9fa; /* Fundo claro */
+}
+
+.header {
+  background-color: #78b83d; /* Cor verde para o cabeçalho */
+}
+
+form {
+  background-color: white; /* Fundo branco do formulário */
+}
+
+.form-label {
+  font-size: 1rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  border-color: #78b83d; /* Borda verde */
+}
+
+button[type="submit"] {
+  background-color: #78b83d;
+  border: none;
+}
+
+button[type="submit"]:hover {
+  background-color: #5e9b34;
+}
+
+a.text-success:hover {
+  color: #3c7735;
+}
+
+button.btn-outline-success {
+  border-color: #78b83d;
+  color: #78b83d;
+}
+
+button.btn-outline-success:hover {
+  background-color: #78b83d;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

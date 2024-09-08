@@ -1,0 +1,116 @@
+body {
+  background-color: #f8f9fa; /* Fundo claro */
+}
+
+.header {
+  background-color: #78b83d; /* Cor verde para o cabeçalho */
+}
+
+.search-bar input, 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"] {
+  border-radius: 20px;
+  border: none;
+  border-color: #78b83d;
+}
+
+button.btn-lg,
+button[type="submit"],
+button.btn-outline-success,
+.product-action button,
+.btn-primary,
+.btn-quantity {
+  background-color: #78b83d;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+button.btn-lg.active,
+button.btn-lg:hover,
+button[type="submit"]:hover,
+button.btn-outline-success:hover,
+.product-action button:hover,
+.btn-primary:hover,
+.btn-quantity:hover {
+  background-color: #5e9b34;
+  color: white;
+}
+
+.product-box,
+.product-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.product-title, .product-info h5,
+h5, .product-name,
+.product-price, 
+.summary h6 {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-quantity .quantity-input {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: 0 8px;
+}
+
+.payment-method .form-check-label,
+.payment-method h6 {
+  font-size: 16px;
+}
+
+a.text-success:hover {
+  color: #3c7735;
+}
+
+a.text-danger:hover {
+  color: red;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.fixed-bottom {
+  background-color: #78b83d;
+  height: 70px;
+}
+
+.fixed-bottom img, .nav-icon {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: #e5f1dc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.freight-free {
+  color: green;
+}
+
+.product-freight, .total-price {
+  color: #000;
+}
+
+button.btn-outline-success {
+  border-color: #78b83d;
+  color: #78b83d;
+}

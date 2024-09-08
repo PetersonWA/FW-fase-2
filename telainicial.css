@@ -1,0 +1,18 @@
+body {
+    background-color: #78b83d; /* Cor de fundo verde */
+  }
+  
+  .logo {
+    width: 150px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+  }
+  
+  h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 4rem;
+  }
+  
+  p {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem;
+  }

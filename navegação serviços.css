@@ -1,0 +1,68 @@
+body {
+      background-color: #f8f9fa;
+    }
+
+    .header {
+      background-color: #78b83d;
+    }
+
+    .search-bar input {
+      border-radius: 20px;
+      border: none;
+    }
+
+    button.btn-lg.active {
+      background-color: #78b83d;
+      color: white;
+      border-radius: 20px;
+    }
+
+    button.btn-lg {
+      background-color: #f8f9fa;
+      color: black;
+      border-radius: 20px;
+    }
+
+    .time-options button {
+      margin: 5px;
+    }
+
+    .time-options button:hover {
+      background-color: #78b83d;
+      color: white;
+    }
+
+    .fixed-bottom {
+      background-color: #78b83d;
+    }
+
+    .fixed-bottom img {
+      width: 50px;
+    }
+
+    /* Inicialmente, todos os campos adicionais ficam desabilitados */
+    #additionalFields {
+      display: none;
+    }
+
+    .fixed-bottom {
+      height: 70px; /* Altura da barra inferior */
+    }
+    
+    .nav-icon {
+      max-width: 50px; /* Tamanho máximo dos ícones */
+      height: auto; /* Mantém a proporção da imagem */
+      display: block; /* Garante que a imagem se comporte como bloco */
+      margin: 0 auto; /* Centraliza horizontalmente */
+    }
+    
+    .container .row {
+      height: 100%; /* Garante que as colunas ocupem toda a altura da barra */
+    }
+    
+    .fixed-bottom .col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
