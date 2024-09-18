@@ -19,8 +19,7 @@ input[type="date"] {
 
 button.btn-lg,
 button[type="submit"],
-button.btn-outline-success,
-.product-action button,
+button.product-action button,
 .btn-primary,
 .btn-quantity {
   background-color: #78b83d;

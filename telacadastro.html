@@ -15,7 +15,7 @@
     </div>
 
     <!-- Formulário -->
-    <form action="https://formsubmit.co/pweschenfelder@gmail.com" method="POST" class="mt-4 p-4 border rounded shadow-sm">
+    <form class="mt-4 p-4 border rounded shadow-sm">
       <div class="mb-3">
         <label for="nome" class="form-label">Qual o seu nome? *</label>
         <input type="text" class="form-control is-invalid" id="nome" placeholder="nãu use (@$&#/)">
@@ -60,11 +60,12 @@
         <label class="form-check-label" for="termos">Aceito os <a href="#" class="text-success">termos de uso</a></label>
       </div>
 
-      <a href="navegação perfil.html"><button type="submit" class="btn btn-success w-100">Cadastrar</button></a>
+      <a href="navegação perfil.html"><button type="submit" class="btn btn-success w-100" onclick="salvarCadastro()">Cadastrar</button></a>
       <p class="text-muted mt-2">(*)Campos obrigatórios </p>
     </form>
   </div>
 
+  <script src="scripts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
