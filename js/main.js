@@ -146,15 +146,18 @@ function salvarAgendamento() {
     selectedServices.push(checkbox.id); // Salva o id dos serviços
   });
 
-  // Capturar o dia, horário e transporte selecionado
+  // Capturar o nome do pet,  dia, horário e transporte selecionado
+  
+  const selectedPet = document.getElementById('petName').value;
   const selectedDay = document.getElementById('selectDay').value;
   const selectedTime = document.querySelector('.time-btn.active')?.dataset.time;
   const selectedTransport = document.querySelector('input[name="transporte"]:checked')?.value;
 
   // Verificar se todos os campos estão preenchidos
-  if (selectedServices.length > 0 && selectedDay && selectedTime && selectedTransport) {
+  if (petName && selectedServices.length > 0 && selectedDay && selectedTime && selectedTransport) {
     // Criar objeto de agendamento
     const agendamento = {
+      Nome: selectedPet,
       services: selectedServices,
       day: selectedDay,
       time: selectedTime,
