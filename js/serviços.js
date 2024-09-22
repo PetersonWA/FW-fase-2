@@ -71,4 +71,4 @@ function salvarAgendamento() {
   }
   
   // Carregar eventos ao iniciar a página de serviços
-  document.addEventListener('DOMContentLoaded', initAgendamento);
+  document.addEventListener('DOMContentLoaded', initAgendamento, exibirAgendamentos);
