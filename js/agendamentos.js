@@ -23,9 +23,39 @@ function exibirAgendamentos() {
     }
   }
   
-  // Carregar agendamentos ao carregar o perfil
-  document.addEventListener('DOMContentLoaded', () => {
+  // Função para inicializar os eventos na tela de agendamento
+function initAgendamento() {
+    document.getElementById('petForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const petName = document.getElementById('petName').value;
+      if (petName) {
+        document.getElementById('additionalFields').style.display = 'block';
+      }
+    });
+  
+    document.querySelectorAll('.service-checkbox, #selectDay, input[name="transporte"]').forEach(element => {
+      element.addEventListener('change', checkCompletion);
+    });
+  
+    document.querySelectorAll('.time-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        checkCompletion();
+      });
+    });
+  
+    document.getElementById('confirm-btn').addEventListener('click', salvarAgendamento);
+  }
+
+  
+  // Inicializa os eventos ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('agendamentosList')) {
       exibirAgendamentos();
     }
+    if (document.getElementById('confirm-btn')) {
+      initAgendamento();
+    }
   });
+  
