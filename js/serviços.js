@@ -1,16 +1,24 @@
 // Função para salvar o agendamento
 function salvarAgendamento() {
     const selectedServices = Array.from(document.querySelectorAll('.service-checkbox:checked')).map(el => el.id);
-    const petNome = localStorage.getItem('petNomeSelecionado');
+    const petNome = localStorage.getItem('petName');
     const data = document.getElementById('selectDay').value;
     const hora = document.querySelector('.time-btn.active').getAttribute('data-time');
     const transporte = document.querySelector('input[name="transporte"]:checked').value;
   
-    if (selectedServices.length > 0 && data && hora && transporte) {
-      const agendamento = { petNome, servicos: selectedServices, data, hora, transporte };
+    if (selectedServices.length > 0 && petNome && data && hora && transporte) {
+      const agendamento = { 
+        petNome :petNome,
+        servicos: selectedServices,
+        data :data,
+        hora: hora,
+        transporte: transporte };
   
+        // Obter os agendamentos existentes no localStorage
       let agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+      // Adicionar o novo agendamento à lista
       agendamentos.push(agendamento);
+      // Salvar a lista atualizada no localStorage
       localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
   
       alert('Agendamento salvo com sucesso!');

@@ -1,8 +1,9 @@
 // Função para exibir agendamentos no perfil
 function exibirAgendamentos() {
     const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+    
     const agendamentosList = document.getElementById('agendamentosList');
-    agendamentosList.innerHTML = '';
+    agendamentosList.innerHTML = ''; // Limpa alista
   
     if (agendamentos.length > 0) {
       agendamentos.forEach(agendamento => {
