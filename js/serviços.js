@@ -1,6 +1,9 @@
 // Função para salvar o agendamento
 function salvarAgendamento() {
-    const selectedServices = Array.from(document.querySelectorAll('.service-checkbox:checked')).map(el => el.id);
+    const selectedServices = [];
+    document.querySelectorAll('.service-checkbox:checked').forEach(checkbox => {
+    selectedServices.push(checkbox.id); // Salva o id dos serviços
+    });
     const petNome = localStorage.getItem('petName');
     const data = document.getElementById('selectDay').value;
     const hora = document.querySelector('.time-btn.active').getAttribute('data-time');
@@ -8,23 +11,25 @@ function salvarAgendamento() {
   
     if (selectedServices.length > 0 && petNome && data && hora && transporte) {
       const agendamento = { 
-        petNome :petNome,
+        Nome :petNome,
         servicos: selectedServices,
         data :data,
         hora: hora,
         transporte: transporte };
   
-        // Obter os agendamentos existentes no localStorage
+      // Obter os agendamentos existentes no localStorage
       let agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+      
       // Adicionar o novo agendamento à lista
       agendamentos.push(agendamento);
+      
       // Salvar a lista atualizada no localStorage
       localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
   
-      alert('Agendamento salvo com sucesso!');
+      alert('Agendamento salvo com sucesso! Você pode visualizar no seu perfil.');
       window.location.href = 'navegação perfil.html';
     } else {
-      alert('Preencha todos os campos.');
+      alert('Por favor, preencha todos os campos antes de terminar.');
     }
   }
   
@@ -34,7 +39,8 @@ function salvarAgendamento() {
     const selectedDay = document.getElementById('selectDay').value !== "";
     const selectedTime = document.querySelector('.time-btn.active');
     const selectedTransport = document.querySelector('input[name="transporte"]:checked');
-    document.getElementById('confirm-btn').disabled = !(selectedServices && selectedDay && selectedTime && selectedTransport);
+    const allValid = selectedServices && selectedDay && selectedTime && selectedTransport;
+    document.getElementById('confirm-btn').disabled = !allValid
   }
   
   // Inicializar eventos na tela de agendamento

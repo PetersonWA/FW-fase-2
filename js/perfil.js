@@ -13,10 +13,11 @@ function exibirNomePerfil() {
     const petRaca = document.getElementById('petRaca').value;
     const petPeso = document.getElementById('petPeso').value;
     const petTemperamento = document.getElementById('petTemperamento').value;
-  
+    // Verificar se todos os campos foram preenchidos
     if (petNome && petRaca && petPeso && petTemperamento) {
+        // Obter os pets existentes do localStorage (ou inicializar uma array vazia se for a primeira vez)
       let pets = JSON.parse(localStorage.getItem('pets')) || [];
-  
+        // Adicionar o novo pet à lista
       const novoPet = { nome: petNome, raca: petRaca, peso: petPeso, temperamento: petTemperamento };
       pets.push(novoPet);
   
@@ -31,11 +32,16 @@ function exibirNomePerfil() {
   
   // Função para exibir os pets cadastrados
   function exibirPets() {
+    // Obter a lista de pets do localStorage
     const pets = JSON.parse(localStorage.getItem('pets')) || [];
+    
+    // Atualizar a exibição dos pets cadastrados
+    exibirPets();
+
     const petList = document.getElementById('petList');
-    petList.innerHTML = '';
+    petList.innerHTML = '';// Limpar a lista antes de adicionar os novos pets
   
-    pets.forEach(pet => {
+    pets.forEach((pet) => {
       const petInfo = `
         <strong>Nome:</strong> ${pet.nome} <br>
         <strong>Raça:</strong> ${pet.raca} <br>
@@ -46,8 +52,13 @@ function exibirNomePerfil() {
     });
   }
   
+  // Carregar os pets cadastrados quando a página for carregada
+    document.addEventListener('DOMContentLoaded', exibirPets);
+    // Carregar o nome do perfil quando a página for carregada
+    document.addEventListener('DOMContentLoaded', exibirNomePerfil);
+
   // Carregar pets e nome ao carregar o perfil
-  document.addEventListener('DOMContentLoaded', () => {
-    exibirNomePerfil();
-    exibirPets();
-  });
+ // document.addEventListener('DOMContentLoaded', () => {
+   // exibirNomePerfil();
+   // exibirPets();
+  //});
