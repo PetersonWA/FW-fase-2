@@ -44,14 +44,10 @@ function cadastraPet() {
         localStorage.setItem('pets', JSON.stringify(pets));
         // Atualizar a exibição dos pets cadastrados
         exibirPets();
-
-        // Limpar os campos do formulário após o cadastro
-        document.getElementById('petNome').value = '';
-        document.getElementById('petRaca').value = '';
-        document.getElementById('petPeso').value = '';
-        document.getElementById('petTemperamento').value = '';
   
         alert('Pet cadastrado com sucesso!');
+        // Redirecionar ou realizar outra ação
+        window.location.href = 'navegação perfil.html';
     } else {
         alert('Por favor, preencha todos os campos.');
     }
