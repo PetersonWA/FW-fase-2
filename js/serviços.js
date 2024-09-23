@@ -1,53 +1,60 @@
 // Função para salvar o agendamento
 function salvarAgendamento() {
+    // Capturar os serviços selecionados
     const selectedServices = [];
     document.querySelectorAll('.service-checkbox:checked').forEach(checkbox => {
-        selectedServices.push(checkbox.id); // Salva o id dos serviços
+      selectedServices.push(checkbox.id); // Salva o id dos serviços
     });
-    const petNome = localStorage.getItem('petName');
-    const data = document.getElementById('selectDay').value;
-    const hora = document.querySelector('.time-btn.active')?.getAttribute('data-time');
-    const transporte = document.querySelector('input[name="transporte"]:checked')?.value;
-
-    if (selectedServices.length > 0 && petNome && data && hora && transporte) {
-        const agendamento = {
-            Nome: petNome,
-            servicos: selectedServices,
-            data: data,
-            hora: hora,
-            transporte: transporte
-        };
-
-        // Obter os agendamentos existentes no localStorage
-        let agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
-
-        // Adicionar o novo agendamento à lista
-        agendamentos.push(agendamento);
-
-        // Salvar a lista atualizada no localStorage
-        localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
-
-        alert('Agendamento salvo com sucesso! Você pode visualizar no seu perfil.');
-        window.location.href = 'navegação perfil.html'; // Redireciona após salvar
+  
+    // Capturar o dia, horário e transporte selecionado 
+    const selectedPet = document.getElementById('selectPet').value;
+    const selectedDay = document.getElementById('selectDay').value;
+    const selectedTime = document.querySelector('.time-btn.active')?.dataset.time;
+    const selectedTransport = document.querySelector('input[name="transporte"]:checked')?.value;
+  
+    // Verificar se todos os campos estão preenchidos
+    if (selectedServices.length > 0 && selectedDay && selectedTime && selectedTransport) {
+      // Criar objeto de agendamento
+      const agendamento = {
+        Pet: selectedPet,
+        services: selectedServices,
+        day: selectedDay,
+        time: selectedTime,
+        transport: selectedTransport
+      };
+  
+      // Obter os agendamentos existentes no localStorage (ou inicializar uma array vazia)
+      let agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+  
+      // Adicionar o novo agendamento à lista
+      agendamentos.push(agendamento);
+  
+      // Salvar a lista atualizada no localStorage
+      localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+  
+      // Exibir mensagem de sucesso
+      alert('Agendamento salvo com sucesso! Você pode visualizar no seu perfil.');
+  
+      // Redirecionar ou realizar outra ação
+      window.location.href = 'navegação perfil.html';
     } else {
-        alert('Por favor, preencha todos os campos antes de terminar.');
+      alert('Por favor, preencha todos os campos antes de confirmar.');
     }
-}
-
+  }
   
   // Função para verificar se o formulário está completo
   function checkCompletion() {
     const selectedServices = document.querySelectorAll('.service-checkbox:checked').length > 0;
     const selectedDay = document.getElementById('selectDay').value !== "";
-    const selectedTime = document.querySelector('.time-btn.active') !== null;
-    const selectedTransport = document.querySelector('input[name="transporte"]:checked') !== null;
+    const selectedTime = document.querySelector('.time-btn.active');
+    const selectedTransport = document.querySelector('input[name="transporte"]:checked');
     const allValid = selectedServices && selectedDay && selectedTime && selectedTransport;
-    document.getElementById('confirm-btn').disabled = !allValid; // Habilita ou desabilita o botão
-}
+    document.getElementById('confirm-btn').disabled = !allValid;
+  }
   
-  // Inicializar eventos na tela de agendamento
+  // Função para inicializar os eventos na tela de agendamento
   function initAgendamento() {
-    document.getElementById('petForm').addEventListener('submit', event => {
+    document.getElementById('petForm').addEventListener('submit', function(event) {
       event.preventDefault();
       const petName = document.getElementById('petName').value;
       if (petName) {
@@ -69,6 +76,3 @@ function salvarAgendamento() {
   
     document.getElementById('confirm-btn').addEventListener('click', salvarAgendamento);
   }
-  
-  // Carregar eventos ao iniciar a página de serviços
-  document.addEventListener('DOMContentLoaded', initAgendamento, exibirAgendamentos);
