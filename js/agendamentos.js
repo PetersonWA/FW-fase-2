@@ -14,7 +14,7 @@ function exibirAgendamentos() {
             <strong>Data:</strong> ${agendamento.day} <br>
             <strong>Hora:</strong> ${agendamento.time} <br>
             <strong>Transporte:</strong> ${agendamento.transport} <br>
-            <button onclick="excluirAgendamento(${index})">Excluir</button>
+            <button class="btn btn-danger" onclick="excluirAgendamento(${index})">Excluir</button>
             <hr>
           </div>
         `;

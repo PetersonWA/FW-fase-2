@@ -22,7 +22,7 @@ function exibirPets() {
             <strong>Raça:</strong> ${pet.raca} <br>
             <strong>Peso:</strong> ${pet.peso} <br>
             <strong>Temperamento:</strong> ${pet.temperamento} <br>
-            <button onclick="excluirPet(${index})">Excluir</button>
+            <button class="btn btn-danger" onclick="excluirPet(${index})">Excluir</button>
             <hr>
         `;
         petList.innerHTML += petInfo;
