@@ -6,14 +6,16 @@ function exibirAgendamentos() {
     agendamentosList.innerHTML = ''; // Limpa alista
   
     if (agendamentos.length > 0) {
-      agendamentos.forEach(agendamento => {
+      agendamentos.forEach((agendamento, index) => {
         const agendamentoInfo = `
           <div>
             <strong>Nome do Pet:</strong> ${agendamento.Pet} <br>
             <strong>Serviços:</strong> ${agendamento.services.join(', ')} <br>
             <strong>Data:</strong> ${agendamento.day} <br>
             <strong>Hora:</strong> ${agendamento.time} <br>
-            <strong>Transporte:</strong> ${agendamento.transport} <hr>
+            <strong>Transporte:</strong> ${agendamento.transport} <br>
+            <button onclick="excluirAgendamento(${index})">Excluir</button>
+            <hr>
           </div>
         `;
         agendamentosList.innerHTML += agendamentoInfo;
@@ -23,6 +25,25 @@ function exibirAgendamentos() {
     }
   }
   
+
+// Função para excluir um agendamento pelo índice
+function excluirAgendamento(index) {
+  const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+  
+  // Remover o agendamento pelo índice
+  agendamentos.splice(index, 1);
+  
+  // Atualizar o localStorage
+  localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+  
+  // Atualizar a lista exibida
+  exibirAgendamentos();
+  
+  alert('Agendamento excluído com sucesso!');
+}
+
+
+
   // Função para inicializar os eventos na tela de agendamento
 function initAgendamento() {
     document.getElementById('petForm').addEventListener('submit', function(event) {

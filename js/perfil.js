@@ -14,16 +14,22 @@ function exibirPets() {
     
     const petList = document.getElementById('petList');
     petList.innerHTML = ''; // Limpar a lista antes de adicionar os novos pets
-  
-    pets.forEach((pet) => {
+    
+    if (pets.length > 0) {
+    pets.forEach((pet, index) => {
         const petInfo = `
             <strong>Nome:</strong> ${pet.nome} <br>
             <strong>Raça:</strong> ${pet.raca} <br>
             <strong>Peso:</strong> ${pet.peso} <br>
-            <strong>Temperamento:</strong> ${pet.temperamento} <hr>
+            <strong>Temperamento:</strong> ${pet.temperamento} <br>
+            <button onclick="excluirPet(${index})">Excluir</button>
+            <hr>
         `;
         petList.innerHTML += petInfo;
-    });
+        });
+    }else{
+        petList.innerHTML = '<p>Nenhum Pet cadastrado.</p>';
+    }
 }
 
 // Função para cadastrar o pet
@@ -52,6 +58,26 @@ function cadastraPet() {
         alert('Por favor, preencha todos os campos.');
     }
 }
+
+
+
+// Função para excluir um pet pelo índice
+function excluirPet(index) {
+    const pets = JSON.parse(localStorage.getItem('petInfo')) || [];
+    
+    // Remover o agendamento pelo índice
+    pets.splice(index, 1);
+    
+    // Atualizar o localStorage
+    localStorage.setItem('pets', JSON.stringify(pets));
+    
+    // Atualizar a lista exibida
+    exibirPets();
+    
+    alert('Pet excluído com sucesso!');
+  }
+
+
 
 // Consolidando as chamadas do DOMContentLoaded em uma única função
 document.addEventListener('DOMContentLoaded', () => {
