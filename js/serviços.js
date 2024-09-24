@@ -7,7 +7,7 @@ function salvarAgendamento() {
     });
   
     // Capturar o dia, horário e transporte selecionado 
-    const selectedPet = document.getElementById('.petName').value;
+    const selectedPet = document.getElementById('petName').value;
     const selectedDay = document.getElementById('selectDay').value;
     const selectedTime = document.querySelector('.time-btn.active')?.dataset.time;
     const selectedTransport = document.querySelector('input[name="transporte"]:checked')?.value;
