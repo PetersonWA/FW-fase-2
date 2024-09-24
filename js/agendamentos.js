@@ -9,11 +9,11 @@ function exibirAgendamentos() {
       agendamentos.forEach(agendamento => {
         const agendamentoInfo = `
           <div>
-            <strong>Nome do Pet:</strong> ${agendamento.petNome} <br>
-            <strong>Serviços:</strong> ${agendamento.servicos.join(', ')} <br>
-            <strong>Data:</strong> ${agendamento.data} <br>
-            <strong>Hora:</strong> ${agendamento.hora} <br>
-            <strong>Transporte:</strong> ${agendamento.transporte} <hr>
+            <strong>Nome do Pet:</strong> ${agendamento.pet} <br>
+            <strong>Serviços:</strong> ${agendamento.services.join(', ')} <br>
+            <strong>Data:</strong> ${agendamento.day} <br>
+            <strong>Hora:</strong> ${agendamento.time} <br>
+            <strong>Transporte:</strong> ${agendamento.transport} <hr>
           </div>
         `;
         agendamentosList.innerHTML += agendamentoInfo;
