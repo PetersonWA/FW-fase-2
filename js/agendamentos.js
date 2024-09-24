@@ -9,7 +9,7 @@ function exibirAgendamentos() {
       agendamentos.forEach(agendamento => {
         const agendamentoInfo = `
           <div>
-            <strong>Nome do Pet:</strong> ${agendamento.pet} <br>
+            <strong>Nome do Pet:</strong> ${agendamento.Pet} <br>
             <strong>Serviços:</strong> ${agendamento.services.join(', ')} <br>
             <strong>Data:</strong> ${agendamento.day} <br>
             <strong>Hora:</strong> ${agendamento.time} <br>
@@ -29,7 +29,7 @@ function initAgendamento() {
       event.preventDefault();
       const petName = document.getElementById('petName').value;
       if (petName) {
-        document.getElementById('additionalFields').style.display = 'block';
+        document.getElementById('addPet','additionalFields').style.display = 'block';
       }
     });
   
