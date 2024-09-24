@@ -10,10 +10,11 @@ h5 {
 }
 
 .product-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra nas divs */
+    margin-bottom: 20px;  /* Espaçamento entre os cards */
 }
 
 .product-title {

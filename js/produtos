@@ -1,0 +1,61 @@
+
+
+//Função apra adicionar produto ao carrinho
+function adicionarAoCarrinho(produto) {
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      
+        carrinho.push(produto);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        //alert('Produto adicionado ao carrinho!');
+    
+}
+
+// Exemplo de como chamar essa função em um botão:
+document.querySelectorAll('.btn-warning').forEach((button, index) => {
+    button.addEventListener('click', function() {
+      // Declarando as variáveis antes das verificações
+      let nomeProduto = '';
+      let precoProduto = '';
+      let imagemProduto = '';
+  
+      // Verificando o nome do produto
+      const nomeElemento = this.parentNode.previousElementSibling.querySelector('h5');
+      if (nomeElemento && nomeElemento.textContent.length > 0) {
+        nomeProduto = nomeElemento.textContent;
+      } else {
+        nomeProduto = -1; // Valor indicando erro na captura do nome
+      }
+  
+      // Verificando o preço do produto
+      const precoElemento = this.parentNode.previousElementSibling.querySelector('strong');
+      if (precoElemento && precoElemento.textContent.length > 0) {
+        precoProduto = precoElemento.textContent;
+      } else {
+        precoProduto = -1; // Valor indicando erro na captura do preço
+      }
+  
+      // Verificando a imagem do produto
+      const imagemElemento = this.parentNode.parentNode.querySelector('img');
+      if (imagemElemento && imagemElemento.src) {
+        imagemProduto = imagemElemento.src;
+      } else {
+        imagemProduto = -1; // Valor indicando erro na captura da imagem
+      }
+  
+      // testa todas as informações se foram capturadas corretamente
+      if (nomeProduto !== -1 && precoProduto !== -1 && imagemProduto !== -1) {
+        // Se tudo estiver certo é criado o objeto do produto
+        const produto = {
+          nome: nomeProduto,
+          preco: precoProduto,
+          imagem: imagemProduto
+        };
+  
+        // Função que adiciona ao carrinho
+        adicionarAoCarrinho(produto);
+      } else {
+        alert('Erro ao capturar os dados do produto.');
+      }
+    });
+  });
+  
