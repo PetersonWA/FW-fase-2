@@ -1,40 +1,52 @@
-
-// Função para exibir o carrinho
-function exibirCarrinho() {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    const carrinhoContainer = document.querySelector('.container.mt-4');
+function carregarCarrinho() {
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  const carrinhoContainer = document.querySelector('#carrinho-produtos');
   
-    carrinhoContainer.innerHTML = ''; // Limpa o carrinho antes de exibir
-  
-    if (carrinho.length > 0) {
-      carrinho.forEach(produto => {
-        carrinhoContainer.innerHTML += `
-          <div class="product-card mb-3">
-            <div class="row">
-              <div class="col-3">
-                <img src="${produto.imagem}" alt="${produto.nome}" class="img-fluid">
+  carrinho.forEach(produto => {
+      const card = `
+          <div class="card mb-3" id="produto-${produto.id}">
+              <div class="row g-0">
+                  <div class="col-md-4">
+                      <br>
+                      <img src="${produto.imagem}" class="rounded mx-auto d-block" alt="${produto.nome}">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title">${produto.nome}</h5>
+                          <p class="card-text">Preço: R$ ${produto.preco}</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div class="product-quantity">
+                                  <label for="quantity-${produto.id}">Quantidade:</label>
+                                  <input type="number" id="quantity-${produto.id}" value="${produto.quantidade}" min="1" max="10" class="form-control" style="width: 70px;">
+                              </div>
+                              <p class="product-price">R$ ${produto.preco}</p>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center">
+                              <p class="product-freight">Frete: <span class="freight-free">Grátis</span></p>
+                              <a href="#" class="text-danger" onclick="excluirProduto(${produto.id})">Excluir</a>
+                          </div>
+                      </div>
+                  </div>
               </div>
-              <div class="col-9">
-                <h6 class="product-title">Produto:</h6>
-                <p class="product-name">${produto.nome}</p>
-                <p class="product-price">${produto.preco}</p>
-                <a href="#" class="text-danger" onclick="removerDoCarrinho('${produto.nome}')">Excluir</a>
-              </div>
-            </div>
           </div>`;
-      });
-    } else {
-      carrinhoContainer.innerHTML = '<p>Carrinho vazio.</p>';
-    }
-  }
+      
+      carrinhoContainer.insertAdjacentHTML('beforeend', card);
+  });
+}
+
+function excluirProduto(idProduto) {
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
   
-  function removerDoCarrinho(nomeProduto) {
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    carrinho = carrinho.filter(produto => produto.nome !== nomeProduto);
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    exibirCarrinho();
-  }
+  // Remove o produto específico do carrinho
+  carrinho = carrinho.filter(produto => produto.id !== idProduto);
   
-  // Exibir os produtos ao carregar a página
-  document.addEventListener('DOMContentLoaded', exibirCarrinho);
-  
+  // Atualiza o localStorage
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+  // Remove o card do produto da tela
+  const cardProduto = document.getElementById(`produto-${idProduto}`);
+  cardProduto.remove();
+}
+
+// Chama a função quando a página do carrinho carregar
+carregarCarrinho();

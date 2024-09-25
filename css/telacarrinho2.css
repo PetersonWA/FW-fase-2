@@ -1,0 +1,51 @@
+/* Estilo dos cards de produtos */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    max-height: 150px;
+    object-fit: scale-down;
+    
+}
+
+.quantity-input {
+    width: 60px;
+    text-align: center;
+}
+
+.payment-method {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.summary {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.freight-free {
+    color: green;
+    font-weight: bold;
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}

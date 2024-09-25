@@ -18,31 +18,31 @@
   </div>
 
   <!-- Produtos Listados -->
-  <div class="container mt-4">
-    <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
-      <img src="imagens projeto\produto higiene 1.jpg" alt="Perfume para cachorro" class="product-img">
-      <div class="product-info">
-        <h5>Perfume para cachorro</h5>
-        <p>Valor Unit.: <strong id="precoProduto">XX,XX R$</strong></p>
-        <p>Frete: <strong>XX,XX R$</strong></p>
-      </div>
-      <div class="product-action">
-        <button class="btn btn-warning" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
-      </div>
+  <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
+    <img src="imagens projeto\produto higiene 1.jpg" alt="Perfume para cachorro" class="product-img">
+    <div class="product-info">
+      <h5>Perfume para cachorro</h5>
+      <p>Valor Unit.: <strong class="precoProduto" data-preco="19.99">19,99 R$</strong></p>
+      <p>Frete: <strong class="freteProduto" data-frete="5.00">5,00 R$</strong></p>
     </div>
-    
-    <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
-      <img src="imagens projeto\produto higiene 2.jpg" alt="Shampoo para cachorro" class="product-img">
-      <div class="product-info">
-        <h5>Shampoo para cachorro</h5>
-        <p>Valor Unit.: <strong id="precoProduto">XX,XX R$</strong></p>
-        <p>Frete: <strong>XX,XX R$</strong></p>
-      </div>
-      <div class="product-action">
-        <button class="btn btn-warning" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
-      </div>
+    <div class="product-action">
+      <button class="btn btn-warning" onclick="adicionarAoCarrinho('Perfume para cachorro','Cachorros limpos e cheirosos são grandes desejos de todos os amantes de animais.', '19.99', 'imagens projeto\\produto higiene 1.jpg')">Adicionar ao Carrinho</button>
     </div>
   </div>
+  
+  <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
+    <img src="imagens projeto\produto higiene 2.jpg" alt="Shampoo para cachorro" class="product-img">
+    <div class="product-info">
+      <h5>Shampoo para cachorro</h5>
+      <p>Valor Unit.: <strong class="precoProduto" data-preco="25.50">25,50 R$</strong></p>
+      <p>Frete: <strong class="freteProduto" data-frete="6.00">6,00 R$</strong></p>
+    </div>
+    <div class="product-action">
+      <button class="btn btn-warning" onclick="adicionarAoCarrinho('Shampoo para cachorro','É um produto dedsenvolvidopara a higiene dos cães, deixando perfumados e mantendo as caracteristicas dos pelos.', '25.50', 'imagens projeto\\produto higiene 2.jpg')">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+
   <br></br>
   <br></br>
   <!-- Barra de navegação inferior -->
@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <script src="js/produtos"></script>
+  <script src="js/produtos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
