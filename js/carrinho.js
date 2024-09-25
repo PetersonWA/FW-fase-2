@@ -49,5 +49,40 @@ function excluirProduto(idProduto) {
   cardProduto.remove();
 }
 
+function atualizarCarrinho() {
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  let totalProdutos = 0;
+  let totalPreco = 0;
+
+  carrinho.forEach(produto => {
+    // Pega a quantidade de cada produto a partir do input de quantidade
+    const quantidade = parseInt(document.getElementById(`quantity-${produto.id}`).value) || 1;
+
+    // Atualiza a quantidade no carrinho para refletir a quantidade alterada
+    produto.quantidade = quantidade;
+
+    // Soma a quantidade total de produtos e o preço total
+    totalProdutos += quantidade;
+    totalPreco += quantidade * parseFloat(produto.preco);
+  });
+
+  // Atualiza os valores no HTML
+  document.querySelector('.quantity-produto').innerText = `${totalProdutos} Un.`;
+  document.querySelector('.total-price').innerText = `R$ ${totalPreco.toFixed(2)}`;
+
+  // Atualiza o localStorage com as quantidades atualizadas
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+// Evento para recalcular o total quando a quantidade de um produto é alterada
+document.querySelectorAll('input[type="number"]').forEach(input => {
+  input.addEventListener('change', atualizarCarrinho);
+});
+
+// Chama a função ao carregar a página para calcular os valores iniciais
+window.onload = atualizarCarrinho;
+
+
+
 // Chama a função quando a página do carrinho carregar
 carregarCarrinho();
