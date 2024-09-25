@@ -13,7 +13,7 @@ function carregarCarrinho() {
                   <div class="col-md-8">
                       <div class="card-body">
                           <h5 class="card-title">${produto.nome}</h5>
-                          <p class="card-text">Desc: R$ ${produto.descricao}</p>
+                          <p class="card-text">Desc: ${produto.descricao}</p>
                           <p class="card-text">Preço: R$ ${produto.preco}</p>
                           <div class="d-flex justify-content-between align-items-center">
                               <div class="product-quantity">

@@ -17,32 +17,33 @@
     <p class="text-white ms-4"><i><a href="navegação produtos.html" class="text-white">Produtos</a> > Rações</i></p>
   </div>
 
-  <!-- Produtos Listados -->
-  <div class="container mt-4">
-    <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
-      <img src="imagens projeto\imagem ração1.jpg" alt="Ração para cachorro" class="product-img">
-      <div class="product-info">
-        <h5>Ração para cachorro</h5>
-        <p>Valor Unit.: <strong>XX,XX R$</strong></p>
-        <p>Frete: <strong>XX,XX R$</strong></p>
+ <!-- Produtos Listados -->
+      <!-- Produto 1 -->
+      <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
+        <img src="imagens projeto\imagem ração1.jpg" alt="Ração apra cachorro" class="product-img">
+        <div class="product-info">
+            <h5>Ração para cachorro</h5>
+            <p>Valor Unit.: <strong class="precoProduto" data-preco="45.85">45,85 R$</strong></p>
+            <p>Frete: <strong class="freteProduto" data-frete="10.00">10,00 R$</strong></p>
+        </div>
+        <div class="product-action">
+            <button class="btn btn-warning" onclick="adicionarAoCarrinho('Ração para cachorro','Ração de alta qualidade para cães adultos.','45.85', 'imagens projeto\\imagem ração1.jpg')">Adicionar ao Carrinho</button>
+        </div>
       </div>
-      <div class="product-action">
-        <a href="telacarrinho.html"><button class="btn btn-warning">Adicionar ao Carrinho</button></a>
+      
+      <!-- Produto 2 -->
+      <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
+        <img src="imagens projeto\imagem ração 2.jpg" alt="Palitos de carne" class="product-img">
+        <div class="product-info">
+            <h5>Palitos de carne</h5>
+            <p>Valor Unit.: <strong class="precoProduto" data-preco="25.50">25,50 R$</strong></p>
+            <p>Frete: <strong class="freteProduto" data-frete="6.00">6,00 R$</strong></p>
+        </div>
+        <div class="product-action">
+            <button class="btn btn-warning" onclick="adicionarAoCarrinho('Palitos de carne','É um produto delicioso para seu pet!', '25.50', 'imagens projeto\\imagem ração 2.jpg')">Adicionar ao Carrinho</button>
+        </div>
       </div>
-    </div>
-    
-    <div class="product-item d-flex justify-content-between align-items-center mb-3 p-3">
-      <img src="imagens projeto\imagem ração 2.jpg" alt="Palitos de carne" class="product-img">
-      <div class="product-info">
-        <h5>Palitos de carne</h5>
-        <p>Valor Unit.: <strong>XX,XX R$</strong></p>
-        <p>Frete: <strong>XX,XX R$</strong></p>
-      </div>
-      <div class="product-action">
-        <a href="telacarrinho.html"><button class="btn btn-warning">Adicionar ao Carrinho</button></a>
-      </div>
-    </div>
-  </div>
+
 
   <!-- Barra de navegação inferior -->
   <div class="fixed-bottom bg-success py-3">
