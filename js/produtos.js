@@ -1,8 +1,8 @@
 let produtoId = 1; // Inicializa o ID dos produtos
 
-function adicionarAoCarrinho(nome, preco, imagem) {
+function adicionarAoCarrinho(nome,descricao, preco, imagem) {
     // Atribui um ID ao produto de forma sequencial
-    const produto = {
+        const produto = {
         id: produtoId++,
         nome: nome,
         descricao: descricao,
@@ -21,9 +21,4 @@ function adicionarAoCarrinho(nome, preco, imagem) {
     }
 
 
-// Função para excluir o produto
-function excluirProduto(idProduto) {
-    // Remove o card do produto específico
-    const cardProduto = document.getElementById(`produto-${idProduto}`);
-    cardProduto.remove();
-}
+
