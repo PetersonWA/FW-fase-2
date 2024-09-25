@@ -49,7 +49,6 @@ function excluirProduto(idProduto) {
   cardProduto.remove();
 }
 
-
 function atualizarCarrinho() {
   const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
   let totalProdutos = 0;
@@ -82,6 +81,8 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
 
 // Chama a função ao carregar a página para calcular os valores iniciais
 window.onload = atualizarCarrinho;
+
+
 
 // Chama a função quando a página do carrinho carregar
 carregarCarrinho();
